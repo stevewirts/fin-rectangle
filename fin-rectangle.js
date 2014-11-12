@@ -258,8 +258,8 @@
             return true;
         };
     };
-    var Polymer = Polymer || function() {};
-    Polymer('fin-rectangle', { /* jshint ignore:line  */
+    //var Polymer = Polymer || function() {};
+    Polymer('fin-rectangle',{ /* jshint ignore:line  */
         Point: Point,
         Rectangle: Rectangle
     });
