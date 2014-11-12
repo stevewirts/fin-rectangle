@@ -258,12 +258,15 @@
             return true;
         };
     };
-
+    var Polymer = Polymer || function() {};
     Polymer({ /* jshint ignore:line  */
-        ready: function() {
-
-        },
         Point: Point,
         Rectangle: Rectangle
     });
-})(Polymer);
+    if (typeof(module) !== 'undefined' && module.exports) {
+        module.exports = {
+            Rectangle: Rectangle,
+            Point: Point
+        };
+    }
+})();
