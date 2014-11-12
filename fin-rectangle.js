@@ -259,7 +259,7 @@
         };
     };
     var Polymer = Polymer || function() {};
-    Polymer({ /* jshint ignore:line  */
+    Polymer('fin-rectangle', { /* jshint ignore:line  */
         Point: Point,
         Rectangle: Rectangle
     });
