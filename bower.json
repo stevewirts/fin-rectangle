@@ -1,16 +1,26 @@
 {
   "name": "fin-rectangle",
-  "version": "0.2.1",
+  "version": "0.2.2",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "Element providing solution to no problem in particular.",
   "keywords": [
-    "seed",
-    "polymer",
-    "web-components"
+    "web-component",
+    "web-components",
+    "polymer"
   ],
   "main": "fin-rectangle.html",
+  "license": "MIT",
+  "homepage": "https://github.com/<USERNAME>/fin-rectangle/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.4.0"
   },
   "devDependencies": {
-    "polymer-test-tools": "Polymer/polymer-test-tools#^0.4.0"
+    "polymer": "Polymer/polymer#^0.5.1",
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0-rc1"
   }
 }
