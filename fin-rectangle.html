@@ -115,9 +115,40 @@ Example using src:
 
         var that = {};
 
+        /**
+         * The origin of this rectangle expressed as a point object,
+         *
+         * @attribute origin
+         * @type point
+         * @default 'point at 0,0'
+         */
         var origin = createPoint(x, y);
+
+        /**
+         * The extent of this rectangle expressed as a point object,
+         *
+         * @attribute extent
+         * @type point
+         * @default 'point at 0,0'
+         */
         var extent = createPoint(width, height);
+
+        /**
+         * The corner of this rectangle expressed as a point object,
+         *
+         * @attribute corner
+         * @type point
+         * @default 'point at 0,0'
+         */
         var corner = createPoint(x + width, y + height);
+
+        /**
+         * The center of this rectangle expressed as a point object,
+         *
+         * @attribute center
+         * @type point
+         * @default 'point at 0,0'
+         */
         var center = createPoint(x + (width / 2), y + (height / 2));
 
         Object.defineProperty(that, 'origin', {
