@@ -1,6 +1,10 @@
 <!--
 
-The `fin-rectangle` element provides simple point and rectangle functionality for the [fin-canvas](http://github.com/stevewirts/fin-canvas) and [fin-hypergrid](http://github.com/openfin/fin-hypergrid) components
+The `fin-rectangle` element provides simple point and rectangle functionality for the [fin-canvas](http://github.com/stevewirts/fin-canvas) and [fin-hypergrid](http://github.com/openfin/fin-hypergrid) components.  fin-rectangle is a factory object with 2 namespaces
+
+## point.create( x, y)
+## rectangle.create( originX, originY, extentX, extentY);
+## rectangle.rectangleContains(myRect, x, y)
 
 Example using src:
 
@@ -52,6 +56,13 @@ Example using src:
 
         var that = {};
 
+        /**
+         * The x of this point expressed as a number,
+         *
+         * @attribute point.x
+         * @type number
+         * @default '0'
+         */
         Object.defineProperty(that, 'x', {
             value: x || 0,
             writable: false,
@@ -59,6 +70,14 @@ Example using src:
             configurable: false
         });
 
+
+        /**
+         * The y of this point expressed as a number,
+         *
+         * @attribute point.y
+         * @type number
+         * @default '0'
+         */
         Object.defineProperty(that, 'y', {
             value: y || 0,
             writable: false,
@@ -118,7 +137,7 @@ Example using src:
         /**
          * The origin of this rectangle expressed as a point object,
          *
-         * @attribute origin
+         * @attribute rectangle.origin
          * @type point
          * @default 'point at 0,0'
          */
@@ -127,7 +146,7 @@ Example using src:
         /**
          * The extent of this rectangle expressed as a point object,
          *
-         * @attribute extent
+         * @attribute rectangle.extent
          * @type point
          * @default 'point at 0,0'
          */
@@ -136,7 +155,7 @@ Example using src:
         /**
          * The corner of this rectangle expressed as a point object,
          *
-         * @attribute corner
+         * @attribute rectangle.corner
          * @type point
          * @default 'point at 0,0'
          */
@@ -145,7 +164,7 @@ Example using src:
         /**
          * The center of this rectangle expressed as a point object,
          *
-         * @attribute center
+         * @attribute rectangle.center
          * @type point
          * @default 'point at 0,0'
          */
@@ -327,6 +346,26 @@ Example using src:
 
         return that;
     }
+
+    /**
+     * returns an instance of point.
+     *
+     * @method point.create(x, y)
+     * @param {Number} the x coordinate
+     *    @param {Number} the y coordinate.
+     * @returns {rectangle.point} point object.
+     */
+
+    /**
+     * returns an instance of rectangle.
+     *
+     * @method rectangle.create(originX, originY, extentX, extentY)
+     * @param {Number} the x origin coordinate
+     *    @param {Number} the y origin coordinate.
+     *    @param {Number} the width extent.
+     *    @param {Number} the height extent.
+     * @returns {rectangle.rectangle} rectangle object.
+     */
 
     Polymer('fin-rectangle', { /* jshint ignore:line  */
         point: {

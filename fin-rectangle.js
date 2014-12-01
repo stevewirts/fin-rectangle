@@ -331,7 +331,7 @@
      * @returns {rectangle.point} point object.
      */
 
-      /**
+    /**
      * returns an instance of rectangle.
      *
      * @method rectangle.create(originX, originY, extentX, extentY)
