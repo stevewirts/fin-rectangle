@@ -31,6 +31,13 @@
 
         var that = {};
 
+        /**
+         * The x of this point expressed as a number,
+         *
+         * @attribute point.x
+         * @type number
+         * @default '0'
+         */
         Object.defineProperty(that, 'x', {
             value: x || 0,
             writable: false,
@@ -38,6 +45,14 @@
             configurable: false
         });
 
+
+        /**
+         * The y of this point expressed as a number,
+         *
+         * @attribute point.y
+         * @type number
+         * @default '0'
+         */
         Object.defineProperty(that, 'y', {
             value: y || 0,
             writable: false,
@@ -97,7 +112,7 @@
         /**
          * The origin of this rectangle expressed as a point object,
          *
-         * @attribute origin
+         * @attribute rectangle.origin
          * @type point
          * @default 'point at 0,0'
          */
@@ -106,7 +121,7 @@
         /**
          * The extent of this rectangle expressed as a point object,
          *
-         * @attribute extent
+         * @attribute rectangle.extent
          * @type point
          * @default 'point at 0,0'
          */
@@ -115,7 +130,7 @@
         /**
          * The corner of this rectangle expressed as a point object,
          *
-         * @attribute corner
+         * @attribute rectangle.corner
          * @type point
          * @default 'point at 0,0'
          */
@@ -124,7 +139,7 @@
         /**
          * The center of this rectangle expressed as a point object,
          *
-         * @attribute center
+         * @attribute rectangle.center
          * @type point
          * @default 'point at 0,0'
          */
@@ -306,6 +321,26 @@
 
         return that;
     }
+
+    /**
+     * returns an instance of point.
+     *
+     * @method point.create(x, y)
+     * @param {Number} the x coordinate
+     *    @param {Number} the y coordinate.
+     * @returns {rectangle.point} point object.
+     */
+
+      /**
+     * returns an instance of rectangle.
+     *
+     * @method rectangle.create(originX, originY, extentX, extentY)
+     * @param {Number} the x origin coordinate
+     *    @param {Number} the y origin coordinate.
+     *    @param {Number} the width extent.
+     *    @param {Number} the height extent.
+     * @returns {rectangle.rectangle} rectangle object.
+     */
 
     Polymer('fin-rectangle', { /* jshint ignore:line  */
         point: {
