@@ -7,17 +7,26 @@
 (function() {
 
     function rectangleContains(rect, x, y) {
-        var extX = rect.extent.x;
-        extX = extX < 0 ? -extX : extX;
+        var minX = rect.origin.x;
+        var minY = rect.origin.y;
+        var maxX = minX + rect.extent.x;
+        var maxY = minY + rect.extent.y;
 
-        var extY = rect.extent.y;
-        extY = extY < 0 ? -extY : extY;
+        if (rect.extent.x < 0) {
+            minX = maxX;
+            maxX = rect.origin.x;
+        }
+
+        if (rect.extent.y < 0) {
+            minY = maxY;
+            maxY = rect.origin.y;
+        }
 
         var result =
-            x >= rect.origin.x &&
-            y >= rect.origin.y &&
-            x <= rect.origin.x + extX &&
-            y <= rect.origin.y + extY;
+            x >= minX &&
+            y >= minY &&
+            x <= maxX &&
+            y <= maxY;
 
         return result;
     }
