@@ -1,7 +1,7 @@
 fin-rectangle
 ================
 
-See the [component page](http://stevewirts.github.io/stevewirts/fin-rectangle) for more information.
+See the [component page](http://stevewirts.github.io/fin-rectangle/components/fin-rectangle/) for more information.
 
 ## Getting Started
 
