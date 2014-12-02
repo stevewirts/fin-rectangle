@@ -1,0 +1,33 @@
+{
+  "name": "fin-rectangle",
+  "authors": [
+    "Steve Wirts <stevewirts@gmail.com>"
+  ],
+  "description": "a non visual polymer element that acts as a factory for simple rectangle/point functionality",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer"
+  ],
+  "main": "fin-rectangle.html",
+  "license": "MIT",
+  "homepage": "https://github.com/stevewirts/fin-rectangle/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "_release": "e365f3a182",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e365f3a18217d84954f65778a12b56a3f273e1fc"
+  },
+  "_source": "git://github.com/stevewirts/fin-rectangle.git",
+  "_target": "master",
+  "_originalSource": "stevewirts/fin-rectangle",
+  "_direct": true
+}

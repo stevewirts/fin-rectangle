@@ -1,0 +1,7 @@
+{
+  "name": "fin-rectangle#gh-pages",
+  "private": true,
+  "dependencies": {
+    "fin-rectangle": "stevewirts/fin-rectangle#master"
+  }
+}
