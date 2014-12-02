@@ -1,6 +1,6 @@
 {
   "name": "fin-rectangle",
-  "version": "0.2.22",
+  "version": "0.2.23",
   "authors": [
     "Steve Wirts <stevewirts@gmail.com>"
   ],
@@ -20,6 +20,6 @@
   "dependencies": {
   },
   "devDependencies": {
-    "polymer": "Polymer/polymer#^0.5.1"
+    "polymer": "Polymer/polymer#master",
   }
 }
