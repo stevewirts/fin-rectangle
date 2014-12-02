@@ -324,7 +324,8 @@
 
     /**
      *                                                                        .
-     * returns an new instance of point.
+     *                                                                      .
+     * returns an instance of point.
      *
      * @method point.create(x, y)
      * @param {Number} the x coordinate
@@ -334,7 +335,8 @@
 
     /**
      *                                                                      .
-     * returns an new instance of rectangle.
+     *                                                                      .
+     * returns an instance of rectangle.
      *
      * @method rectangle.create(ox,oy,ex,ey)
      * @param {Number} the x origin coordinate
