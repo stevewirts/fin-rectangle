@@ -60,41 +60,133 @@
             configurable: false
         });
 
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns an instance of point that is the sum of self and the argument.
+         *
+         * @method point.plus(point)
+         * @param {point} a point to add to self
+         * @returns {point} point object.
+         */
         that.plus = function(point) {
             var result = createPoint(this.x + point.x, y + point.y);
             return result;
         };
 
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns an instance of point that is the difference of self and the argument.
+         *
+         * @method point.minus(point)
+         * @param {point} a point to subtract from self
+         * @returns {point} point object.
+         */
         that.minus = function(point) {
             var result = createPoint(x - point.x, y - point.y);
             return result;
         };
+
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns an instance of point that is the min x and y of self and the argument.
+         *
+         * @method point.min(point)
+         * @param {point} a point to source min x and min y against self
+         * @returns {point} point object.
+         */
         that.min = function(point) {
             var result = createPoint(Math.min(x, point.x), Math.min(y, point.y));
             return result;
         };
+
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns an instance of point that is the max x and y of self and the argument.
+         *
+         * @method point.max(point)
+         * @param {point} a point to source max x and max y against self
+         * @returns {point} point object.
+         */
         that.max = function(point) {
             var result = createPoint(Math.max(x, point.x), Math.max(y, point.y));
             return result;
         };
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns distance between the argment and self using the distance formula.
+         *
+         * @method point.distance(point)
+         * @param {point} a point to compute the distance from self
+         * @returns {Number} number object.
+         */
         that.distance = function(point) {
             var dx = point.x - x,
                 dy = point.y - y,
                 result = Math.sqrt((dx * dx) + (dy * dy));
             return result;
         };
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns if both x and y of self is greater than that of the argument.
+         *
+         * @method point.greaterThan(point)
+         * @param {point} a point to compare against self
+         * @returns {boolean} boolean value.
+         */
         that.greaterThan = function(point) {
             var result = this.x > point.x && y > point.y;
             return result;
         };
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns if both x and y of self is less than that of the argument.
+         *
+         * @method point.lessThan(point)
+         * @param {point} a point to compare against self
+         * @returns {boolean} boolean value.
+         */
         that.lessThan = function(point) {
             var result = this.x < point.x && y < point.y;
             return result;
         };
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns if both x and y of self is greater than or equal to that of the argument.
+         *
+         * @method point.greaterThanEqualTo(point)
+         * @param {point} a point to compare against self
+         * @returns {boolean} boolean value.
+         */
         that.greaterThanEqualTo = function(point) {
             var result = this.x >= point.x && y >= point.y;
             return result;
         };
+
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns if both x and y of self is less than or equal to that of the argument.
+         *
+         * @method point.lessThanEqualTo(point)
+         * @param {point} a point to compare against self
+         * @returns {boolean} boolean value.
+         */
         that.lessThanEqualTo = function(point) {
             var result = this.x <= point.x && y <= point.y;
             return result;
@@ -173,46 +265,116 @@
             configurable: false
         });
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns this.origin.y, this may need to change
+         *
+         * @method rectangle.top()
+         */
         that.top = function() {
             return this.origin.y;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns this.origin.x, this may need to change
+         *
+         * @method rectangle.left()
+         */
         that.left = function() {
             return this.origin.x;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns this.top() + this.extent.y, this may need to change
+         *
+         * @method rectangle.bottom()
+         */
         that.bottom = function() {
             return this.top() + this.extent.y;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns this.left() + this.extent.x, this may need to change
+         *
+         * @method rectangle.right()
+         */
         that.right = function() {
             return this.left() + this.extent.x;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns this.extent.x
+         *
+         * @method rectangle.width()
+         */
         that.width = function() {
             return this.extent.x;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns this.extent.y
+         *
+         * @method rectangle.height()
+         */
         that.height = function() {
             return this.extent.y;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns this.extent.x * this.extent.y
+         *
+         * @method rectangle.area()
+         */
         that.area = function() {
             return this.extent.x * this.extent.y;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns a rectangle width 0 and origin x set to argument
+         *
+         * @method rectangle.flattenXAt(x)
+         */
         that.flattenXAt = function(x) {
             var o = this.origin;
             var e = this.extent;
             return createRectangle(x, o.y, 0, e.y);
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns a rectangle height 0 and origin y set to argument
+         *
+         * @method rectangle.flattenYAt(y)
+         */
         that.flattenYAt = function(y) {
             var o = this.origin;
             var e = this.extent;
             return createRectangle(o.x, y, e.x, 0);
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns true if argument point or rectangle is entirely contained inside self
+         *
+         * @method rectangle.contains(pointOrRect)
+         */
         that.contains = function(pointOrRect) {
             var result = pointOrRect.isContainedWithinRectangle(this);
             return result;
@@ -223,6 +385,13 @@
             return result;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * return a Rectangle that is enlarged/shrunk by argument size
+         *
+         * @method rectangle.insetBy(thickness)
+         */
         that.insetBy = function(thickness) {
             var result = createRectangle(
                 this.origin.x + thickness,
@@ -232,8 +401,15 @@
             return result;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * return a Rectangle that contains the receiver and the argument
+         *
+         * @method rectangle.union(rectangle)
+         */
         that.union = function(rectangle) {
-            //answer a rectangle that contains the receiver and argment rectangles
+
             var anOrigin = this.origin.min(rectangle.origin),
                 aCorner = this.corner.max(rectangle.corner),
                 width = aCorner.x - anOrigin.x,
@@ -243,6 +419,13 @@
             return result;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * iterate over all points inside me calling function(x,y) for each
+         *
+         * @method rectangle.forEach(function)
+         */
         that.forEach = function(func) {
             var xstart = this.origin.x;
             var xstop = this.origin.x + this.extent.x;
@@ -255,9 +438,15 @@
             }
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns a Rectangle that is the area in which the receiver overlaps with the argument.  ifNoneAction is called if there is no intersection; it has arguments this and rectangle passed in
+         *
+         * @method rectangle.intersect(rectangle,ifNoneAction)
+         */
         that.intersect = function(rectangle, ifNoneAction) {
-            //Answer a Rectangle that is the area in which the receiver overlaps with
-            //rectangle. Optimized for speed
+
             var point = rectangle.origin,
                 myCorner = this.corner,
                 left = null,
@@ -298,8 +487,14 @@
             return result;
         };
 
+        /**
+         *                                                                      .
+         *                                                                      .
+         * returns true if we overlap with the argument, false otherwise
+         *
+         * @method rectangle.intersects(rectangle)
+         */
         that.intersects = function(rectangle) {
-            //return true if we overlap, false otherwise
 
             var rOrigin = rectangle.origin,
                 rCorner = rectangle.corner;
@@ -327,10 +522,10 @@
      *                                                                      .
      * returns an instance of point.
      *
-     * @method point.create(x, y)
+     * @method static.point.create(x,y)
      * @param {Number} the x coordinate
      *    @param {Number} the y coordinate.
-     * @returns {rectangle.point} point object.
+     * @returns {point} point object.
      */
 
     /**
@@ -338,14 +533,25 @@
      *                                                                      .
      * returns an instance of rectangle.
      *
-     * @method rectangle.create(ox,oy,ex,ey)
+     * @method static.rectangle.create(ox,oy,ex,ey)
      * @param {Number} the x origin coordinate
      *    @param {Number} the y origin coordinate.
      *    @param {Number} the width extent.
      *    @param {Number} the height extent.
-     * @returns {rectangle.rectangle} rectangle object.
+     * @returns {rectangle} rectangle object.
      */
 
+    /**
+     *                                                                      .
+     *                                                                      .
+     * returns if a rectangle contains x, y.
+     *
+     * @method static.rectangle.contains(rectangle,x,y)
+     * @param {rectangle} an instance of rectangle
+     *    @param {Number} the x coordinate.
+     *    @param {Number} the y coordinate.
+     * @returns {rectangle} rectangle object.
+     */
     Polymer('fin-rectangle', { /* jshint ignore:line  */
         point: {
             create: createPoint

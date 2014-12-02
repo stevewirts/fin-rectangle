@@ -129,6 +129,85 @@ describe('<fin-rectangle>', function() {
             }
             assert.equal(isImmutable, true);
         });
+        it('should have an area function that computes width * height', function() {
+            var r = rectangles.rectangle.create(0, 0, 10, 10);
+            assert.equal(r.area(), 100);
+        });
+        it('should have a flattenXAt function that smashes the rectangle at argument', function() {
+            var r = rectangles.rectangle.create(0, 0, 10, 10);
+            var flattend = r.flattenXAt(5);
+            assert.equal(flattend.left(), 5);
+            assert.equal(flattend.right(), 5);
+            assert.equal(flattend.height(), 10);
+            assert.equal(flattend.width(), 0);
+        });
+        it('should have a flattenYAt function that smashes the rectangle at argument', function() {
+            var r = rectangles.rectangle.create(0, 0, 10, 10);
+            var flattend = r.flattenYAt(5);
+            assert.equal(flattend.top(), 5);
+            assert.equal(flattend.bottom(), 5);
+            assert.equal(flattend.height(), 0);
+            assert.equal(flattend.width(), 10);
+        });
+        it('should have a contains function that determines if a point or rectangle argument is completely within self', function() {
+            var rect = rectangles.rectangle.create(0, 0, 10, 10);
+
+            var rectInside = rectangles.rectangle.create(2, 2, 5, 5);
+            var rectOverlap = rectangles.rectangle.create(7, 7, 5, 5);
+            var rectOutside = rectangles.rectangle.create(11, 11, 5, 5);
+
+            var pointInside = rectangles.point.create(5, 5);
+            var pointOutside = rectangles.point.create(15, 15);
+
+            assert.equal(rect.contains(rectInside), true);
+            assert.equal(rect.contains(rectOverlap), false);
+            assert.equal(rect.contains(rectOutside), false);
+
+            assert.equal(rect.contains(pointInside), true);
+            assert.equal(rect.contains(pointOutside), false);
+        });
+        it('should have an insetBy function that returns a rectangle enlarged/shrunk by argument', function() {
+            var r = rectangles.rectangle.create(0, 0, 10, 10);
+            var enlarged = r.insetBy(-2);
+            var shrunk = r.insetBy(2);
+            assert.equal(enlarged.area(), 196);
+            assert.equal(shrunk.area(), 36);
+        });
+        it('should have a union function that returns a rectangle that contains the receiver and the argument', function() {
+            var r1 = rectangles.rectangle.create(0, 0, 5, 5);
+            var r2 = rectangles.rectangle.create(7, 7, 3, 3);
+            var union = r1.union(r2);
+            assert.equal(union.contains(r1), true);
+            assert.equal(union.contains(r2), true);
+        });
+        it('should have a forEach function that iterates over all points within', function() {
+            var r = rectangles.rectangle.create(0, 0, 4, 4);
+            var result = [];
+            r.forEach(function(x, y) {
+                result.push('(' + x + ',' + y + ')');
+            });
+            result = result.join('');
+            assert.equal(result, '(0,0)(0,1)(0,2)(0,3)(1,0)(1,1)(1,2)(1,3)(2,0)(2,1)(2,2)(2,3)(3,0)(3,1)(3,2)(3,3)');
+        });
+        it('should have an intersect function that returns a Rectangle that is the area in which the receiver overlaps with the argument', function() {
+            var r1 = rectangles.rectangle.create(0, 0, 5, 5);
+            var r2 = rectangles.rectangle.create(3, 3, 5, 5);
+            var intersect = r1.intersect(r2);
+
+            assert.equal(intersect.top(), 3);
+            assert.equal(intersect.left(), 3);
+            assert.equal(intersect.bottom(), 5);
+            assert.equal(intersect.right(), 5);
+        });
+        it('should have an intersects function that returns true if this overlaps with the argument, false otherwise', function() {
+
+            var r1 = rectangles.rectangle.create(0, 0, 5, 5);
+            var overlaps = rectangles.rectangle.create(3, 3, 5, 5);
+            var outside = rectangles.rectangle.create(6, 6, 5, 5);
+
+            assert.equal(r1.intersects(overlaps), true);
+            assert.equal(r1.intersects(outside), false);
+        });
     });
 
 });
