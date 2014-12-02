@@ -20,6 +20,6 @@
   "dependencies": {
   },
   "devDependencies": {
-    "polymer": "Polymer/polymer#master",
+    "polymer": "Polymer/polymer#master"
   }
 }
