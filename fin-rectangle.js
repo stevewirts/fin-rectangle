@@ -34,7 +34,7 @@
         /**
          * The x of this point expressed as a number,
          *
-         * @attribute point.x
+         * @property point.x
          * @type number
          * @default '0'
          */
@@ -49,7 +49,7 @@
         /**
          * The y of this point expressed as a number,
          *
-         * @attribute point.y
+         * @property point.y
          * @type number
          * @default '0'
          */
@@ -204,7 +204,7 @@
         /**
          * The origin of this rectangle expressed as a point object,
          *
-         * @attribute rectangle.origin
+         * @property rectangle.origin
          * @type point
          * @default 'point at 0,0'
          */
@@ -213,7 +213,7 @@
         /**
          * The extent of this rectangle expressed as a point object,
          *
-         * @attribute rectangle.extent
+         * @property rectangle.extent
          * @type point
          * @default 'point at 0,0'
          */
@@ -222,7 +222,7 @@
         /**
          * The corner of this rectangle expressed as a point object,
          *
-         * @attribute rectangle.corner
+         * @property rectangle.corner
          * @type point
          * @default 'point at 0,0'
          */
@@ -231,7 +231,7 @@
         /**
          * The center of this rectangle expressed as a point object,
          *
-         * @attribute rectangle.center
+         * @property rectangle.center
          * @type point
          * @default 'point at 0,0'
          */
