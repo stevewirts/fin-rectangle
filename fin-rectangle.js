@@ -323,6 +323,7 @@
     }
 
     /**
+     *
      * returns an instance of point.
      *
      * @method point.create(x, y)
@@ -332,6 +333,7 @@
      */
 
     /**
+     *
      * returns an instance of rectangle.
      *
      * @method rectangle.create(ox,oy,ex,ey)
