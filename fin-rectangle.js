@@ -334,7 +334,7 @@
     /**
      * returns an instance of rectangle.
      *
-     * @method rectangle.create(originX, originY, extentX, extentY)
+     * @method rectangle.create(ox,oy,ex,ey)
      * @param {Number} the x origin coordinate
      *    @param {Number} the y origin coordinate.
      *    @param {Number} the width extent.
