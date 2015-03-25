@@ -199,6 +199,9 @@
             return rectangleContains(rect, this.x, this.y);
         };
         that.equals = function(point) {
+            if (!point) {
+                return false;
+            }
             return pointEqualsPoint(this, point);
         };
         return that;
