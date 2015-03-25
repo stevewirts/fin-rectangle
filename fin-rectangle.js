@@ -2,6 +2,10 @@
 
 (function() {
 
+    function pointEqualsPoint(a, b) {
+        return a.x === b.x && a.y === b.y;
+    }
+
     function rectangleContains(rect, x, y) {
         var minX = rect.origin.x;
         var minY = rect.origin.y;
@@ -193,6 +197,9 @@
         };
         that.isContainedWithinRectangle = function(rect) {
             return rectangleContains(rect, this.x, this.y);
+        };
+        that.equals = function(point) {
+            return pointEqualsPoint(this, point);
         };
         return that;
     }

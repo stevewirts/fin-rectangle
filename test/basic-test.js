@@ -2,7 +2,7 @@
 
 'use strict';
 
-var rectangles = document.querySelector('fin-rectangle');
+var rectangles = document.querySelector('../fin-rectangle/fin-rectangle');
 
 describe('<fin-rectangle>', function() {
 
@@ -207,6 +207,15 @@ describe('<fin-rectangle>', function() {
 
             assert.equal(r1.intersects(overlaps), true);
             assert.equal(r1.intersects(outside), false);
+        });
+        it('should have an equals function that returns true when x and y are the same for self and the arguement', function() {
+
+            var p1 = rectangles.point.create(3, 4);
+            var p2 = rectangles.point.create(3, 4);
+            var p3 = rectangles.point.create(4, 4);
+
+            assert.equal(p1.equals(p2), true);
+            assert.equal(p1.equals(p3), false);
         });
     });
 
